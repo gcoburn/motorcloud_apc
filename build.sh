@@ -5,7 +5,10 @@ echo 'App Name = ' $1
 echo 'Network Name = ' $2
 echo 'DB Name = ' $3
 
+domain='apcera.local'
+dbhost=$3$domain
 
+echo 'DB hostname = ' $dbhost
 # lets work in a safe namespace
 # set the namespace
 apc ns /sandbox/gary.coburn
@@ -81,7 +84,7 @@ cd /var/lib/jenkins/jobs/motorcloud_apc/workspace/motorcloud
 
 # create the application
 apc app delete $1 --batch || echo "app doesnt exist...skipping"
-apc app create $1 -ae --allow-ssh  --start-cmd '/app/bash_start.sh'  --env-set 'DB_HOST='$3'.apcera.local' --env-set 'DB_PASSWORD=P@ssw0rd' --batch
+apc app create $1 -ae --allow-ssh  --start-cmd '/app/bash_start.sh'  --env-set 'DB_HOST=$dbhost' --env-set 'DB_PASSWORD=P@ssw0rd' --batch
 
 # join the same network as the mysql app
 # start the application
