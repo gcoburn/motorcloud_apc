@@ -1,0 +1,249 @@
+/* CSS Document */
+
+body {
+	color:#FFFFFF;
+
+}
+
+
+
+.parsley-required {
+	margin-top:-22px !important;
+	padding:1px 5px 8px 16px !important;
+
+}
+
+.parsley-type {
+	margin-top:-22px !important;
+	padding:1px 20px 8px 16px !important;
+	text-align:right;
+
+}
+
+.parsley-errors-list {
+ width:280px !important;
+}
+
+
+.parsley-minlength {
+		margin-top:-42px !important;
+	padding:0px 5px 8px 10px !important;
+	width:270px !important;
+
+
+}
+
+
+#container {
+	width:1080px;
+    margin: 620px auto 0;
+
+}
+
+.forms {
+   padding-top: 25px;
+
+} 
+
+#left {
+	width:557px;
+	height:253px;
+	float:left;
+	background-image:url(../images/form_LeftBG.png);
+	background-position:top center;
+	background-repeat:no-repeat;
+	
+}
+
+#right {
+	width:522px;
+	height:331px;
+	float:right;
+	background-image:url(../images/form_RightBG.png);
+	background-position:top center;
+	background-repeat:no-repeat;
+
+}
+
+
+.cssform p{
+width: 310px;
+clear: left;
+margin: 0;
+padding: 5px 0 8px 0;
+padding-left: 155px; /*width of left column containing the label elements*/
+
+}
+
+.cssform p:last-of-type{
+border-bottom: none;
+}
+
+.cssform label{
+   float: left;
+    font-family: arial;
+    font-weight: bold;
+    margin-left: -166px;
+    padding-right: 5px;
+    text-align: right;
+    width: 150px;
+}
+
+.cssform input[type="text"]{ /*width of text boxes. IE6 does not understand this attribute*/
+    border: 1px solid #7e7d78;
+    height: 34px;
+    margin-bottom: 0;
+    width: 275px;
+	  padding: 0px 10px 2px 15px;
+	     font-size: 18px;
+
+}
+
+.cssform input[type="email"]{ /*width of text boxes. IE6 does not understand this attribute*/
+    border: 1px solid #7e7d78;
+    height: 34px;
+    margin-bottom: 0;
+    width: 275px;
+	  padding: 0 10px 2px 15px;
+	     font-size: 18px;
+
+}
+
+.cssform textarea{
+    font-family: arial;
+    font-size: 18px;
+    height: 83px;
+    width: 273px;
+	padding: 3px 10px 2px 15px;
+}
+
+
+* html .threepxfix{
+margin-left: 3px;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+
+#container {
+
+    margin: 620px 30px;
+
+}
+
+}
+
+
+@media screen and (max-width: 480px){ /* responsive form settings, when window width is 480px or less */
+
+	.cssform p{
+		padding-left: 0;
+		width: auto;
+		padding-bottom: 1em;
+	}
+
+	.cssform label{
+		float: none;
+		display: block;
+		margin-left: 0;
+	}
+
+	.cssform input[type="text"]{ /*width of text boxes. IE6 does not understand this attribute*/
+		width: 95%;
+	}
+	
+	.cssform textarea{
+		width: 95%;
+	}
+}
+
+
+#submitbutton {
+    float: right;
+    font-family: arial;
+    font-size: 20px;
+    font-weight: bold;
+    height: 53px;
+    margin-right: -36px;
+    padding: 11px;
+    width: 190px;
+	margin-top:10px;
+
+}
+
+/*RESULTS PAGE*/
+
+tbody {
+  	color:#666666;
+	font-weight:bold;
+	font-size:12px;
+
+
+}
+
+h1 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	 font-size: 2.5em !important;
+	 line-height: 0 !important;
+	 
+}
+
+label {
+	color:#FFFFFF;
+	font-weight:bold;
+	
+
+}
+
+#example_paginate {
+		font-weight:bold;
+
+}
+
+.dataTables_info {
+	color:#FFFFFF !important;
+		font-weight:bold;
+
+}
+
+thead {
+	  background-image:url(../images/bgtbody.jpg) !important;
+	background-color:#000000;
+
+}
+
+tfoot  {
+	  background-image:url(../images/bgtfooter.jpg) !important;
+	background-color:#000000;
+
+}
+
+#example_length {
+	margin-bottom:10px;
+		font-weight:bold;
+
+}
+
+div.info {
+   
+    margin-bottom: 0 !important;
+		font-weight:bold;
+
+}
+
+/*RESULTS PAGE END*/
+
+</style>
