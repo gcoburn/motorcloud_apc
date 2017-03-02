@@ -74,7 +74,7 @@ UNLOCK TABLES;
 GRANT ALL ON *.* to root@'%' IDENTIFIED BY 'P@ssw0rd';
 FLUSH PRIVILEGES;
 EOF2
-mysqladmin -u root password P@ssw0rd
+#mysqladmin -u root -pP@ssw0rd
 EOF
 
 #
