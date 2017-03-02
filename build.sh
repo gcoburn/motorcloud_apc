@@ -69,7 +69,9 @@ EOF
 # Now lets work on the war file
 #
 # change to motorcloud war file directory
-cd motorcloud
+# USED ONLY FOR BUILDING WITH JENKINS CHANGE TO LOCAL DIRECTORIES IF RUNNING LOCAL
+cp -f /var/lib/jenkins/jobs/motorcloud_apc/workspace/Motorcloud.war /var/lib/jenkins/jobs/motorcloud_app/workspace/motorcloud/Motorcloud.war
+cd /var/lib/jenkins/jobs/motorcloud_app/workspace/motorcloud
 
 # create the application
 apc app delete motoapp --batch || echo "app doesnt exist...skipping"
