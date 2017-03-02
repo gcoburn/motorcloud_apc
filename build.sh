@@ -6,6 +6,9 @@ echo 'Network Name = ' $2
 echo 'DB Name = ' $3
 
 domain='apcera.local'
+
+echo 'domain = ' $domain
+
 dbhost=$3$domain
 
 echo 'DB hostname = ' $dbhost
