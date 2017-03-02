@@ -5,7 +5,7 @@ echo 'App Name = ' $1
 echo 'Network Name = ' $2
 echo 'DB Name = ' $3
 
-domain='apcera.local'
+domain='.apcera.local'
 
 echo 'domain = ' $domain
 
