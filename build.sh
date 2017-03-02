@@ -76,8 +76,8 @@ EOF
 #
 # change to motorcloud war file directory
 # USED ONLY FOR BUILDING WITH JENKINS CHANGE TO LOCAL DIRECTORIES IF RUNNING LOCAL
-cp -f /var/lib/jenkins/jobs/motorcloud_apc/workspace/Motorcloud.war /var/lib/jenkins/jobs/motorcloud_app/workspace/motorcloud/Motorcloud.war
-cd /var/lib/jenkins/jobs/motorcloud_app/workspace/motorcloud
+cp -f /var/lib/jenkins/jobs/motorcloud_apc/workspace/Motorcloud.war /var/lib/jenkins/jobs/motorcloud_apc/workspace/motorcloud/Motorcloud.war
+cd /var/lib/jenkins/jobs/motorcloud_apc/workspace/motorcloud
 
 # create the application
 apc app delete $0 --batch || echo "app doesnt exist...skipping"
