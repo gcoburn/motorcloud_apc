@@ -9,7 +9,7 @@ if(ua.matches("(?i).*((android|bb\\d+|meego).+mobile|avantgo|bada\\/|blackberry|
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Go</title>
+<title>8451</title>
 <link href="styles/styles.css" rel="stylesheet" type="text/css" />
 
 
@@ -63,25 +63,25 @@ if(ua.matches("(?i).*((android|bb\\d+|meego).+mobile|avantgo|bada\\/|blackberry|
         border-left: 2px solid red;
       }
     </style>
-    
-    
-    
+
+
+
 </head>
 
 <body background="images/form_BG.jpg" style="background-repeat:no-repeat; background-color:#000000; background-position:center top;">
 
 <div id="container"><!--FORMS CONTAINER-->
-   
+
 <form id="myform"  action="enter" class="cssform" method="post">
-      
+
 	 	<!--FORM LEFT-->
 		<div class="forms" id="left">
 				<p>
-				<label for="firstname">FIRST NAME: </label> 
+				<label for="firstname">FIRST NAME: </label>
 				<input type="text" id="user" value="" name="firstname" maxlength="100" data-parsley-group="block1" data-parsley-trigger="change" required="" data-parsley-id="6293"/>
 				</p>
 				<p>
-				<label for="lastname">LAST NAME: </label> 
+				<label for="lastname">LAST NAME: </label>
 				<input type="text" id="emailaddress" value="" name="lastname" maxlength="100" data-parsley-group="block1" data-parsley-trigger="change" required="" data-parsley-id="6293"/>
 				</p>
         		<p>
@@ -97,15 +97,15 @@ if(ua.matches("(?i).*((android|bb\\d+|meego).+mobile|avantgo|bada\\/|blackberry|
 				<input type="checkbox" id="contactMe" value="" name="contactMe"/>
 				</p>
 
-					
+
 		  <div style="color:#ffffff; width:400px; margin-top:20px; text-align:center; font-family:Arial, Helvetica, sans-serif; margin: 33px 50px;"><strong>This is how we get a hold of you.</strong><br />
           		<br />We <strong>guarantee</strong> that your information <strong>will not</strong> be shared with any third party for any reason. Your information will <strong>only</strong> be used in relation to this demonstration.</div>
 		</div><!--FORM LEFT END-->
-		
-    	
-		
+
+
+
       	<div class="forms" id="right"><!--FORM RIGHT-->
-		
+
         	<div id="myform" class="cssform">
           			<p>
 					<label for="stagename" style="color:#FFFFFF; text-shadow: -1px -1px 1px #000000;">STAGE NAME:</label>
@@ -116,22 +116,22 @@ if(ua.matches("(?i).*((android|bb\\d+|meego).+mobile|avantgo|bada\\/|blackberry|
           			<input type="text" id="emailaddress" value="" name="cphrase" maxlength="100" data-parsley-group="block1" data-parsley-trigger="change" required="" data-parsley-id="6293"/>
 					</p>
 					<p>
-					<label for="minibio" style="color:#FFFFFF; text-shadow: -1px -1px 1px #000000;">MINI BIO:</label> 
+					<label for="minibio" style="color:#FFFFFF; text-shadow: -1px -1px 1px #000000;">MINI BIO:</label>
         	  		<textarea id="comments" rows="5" cols="25" name="minibio" maxlength="500" data-parsley-group="block1" data-parsley-trigger="keyup" required=""  data-parsley-minlength="10" data-parsley-maxlength="500" data-parsley-minlength-message="Come on! If you wanna rock the cloud with us you gotta give us more than 10 characters!!!" data-parsley-validation-threshold="10" data-parsley-id="2026"></textarea></p>
 
-					
+
 				 <div style="color:#ffffff; width:400px; margin-top:20px; text-align:left; font-family:Arial, Helvetica, sans-serif; margin: 35px 0 33px;">
 					<strong>This is how you could win. :)</strong></div>
-			
-				
-				
+
+
+
 				<div style="color:#ffffff; width:450px; margin-top:20px; text-align:left; font-family:Arial, Helvetica, sans-serif; margin: 50px 0 33px;"><input type="submit" class="btn btn-default validate" id="submitbutton" value="Submit" /></div>
-					
+
 
       	</div>
-			
+
 		</div><!--FORM RIGHT-->
-		
+
 		</form>
 
 </div><!--FORMS CONTAINER END-->
@@ -164,10 +164,10 @@ if(ua.matches("(?i).*((android|bb\\d+|meego).+mobile|avantgo|bada\\/|blackberry|
 
 
     </script>
-  
-  
-  
-  
-  
+
+
+
+
+
 </body>
 </html>
