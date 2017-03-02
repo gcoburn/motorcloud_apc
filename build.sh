@@ -1,5 +1,11 @@
 #!/bin/sh
 #
+# lets take the arguments for application name, network name, and db name
+echo 'App Name = ' $0
+echo 'Network Name = ' $1
+echo 'DB Name = ' $2
+
+
 # lets work in a safe namespace
 # set the namespace
 apc ns /sandbox/gary.coburn
@@ -7,25 +13,25 @@ apc ns /sandbox/gary.coburn
 # Create network for use my the applications and DB
 #
 # delete network if it exists already then create new network
-apc network delete moto-net --quiet --batch || echo "Network not found, skipping"
-apc network create /sandbox/gary.coburn::moto-net --batch
+apc network delete $1 --quiet --batch || echo "Network not found, skipping"
+apc network create /sandbox/gary.coburn::$1 --batch
 
 #
 # Create mysql application based on docker container
 #
 # delete mysql app if it exists then pull from docker image
-apc app delete mysql --batch || echo "doesnt exist"
-apc docker run mysql --restart always --image mysql --tag 5.7.11 --port 3306 --provider /dev::apcfs -m 1gb --env-set MYSQL_ROOT_PASSWORD=P@ssw0rd --batch
+apc app delete $2 --batch || echo "doesnt exist"
+apc docker run mysql --restart always --image $2 --tag 5.7.11 --port 3306 --provider /dev::apcfs -m 1gb --env-set MYSQL_ROOT_PASSWORD=P@ssw0rd --batch
 
 # stop the mysql app
 # join the newly created network
 # open egress
 # open ssh and
-apc app stop mysql
-apc network join network::/sandbox/gary.coburn::moto-net --job mysql --discovery-address mysql --batch
-apc app update mysql -ae --batch
-apc app update mysql --allow-ssh --batch
-apc app start mysql
+apc app stop $2
+apc network join network::/sandbox/gary.coburn::$1 --job $2 --discovery-address $2 --batch
+apc app update $2 -ae --batch
+apc app update $2 --allow-ssh --batch
+apc app start $2
 
 # Connect to the mysql job
 #
@@ -34,7 +40,7 @@ apc app start mysql
 # edit the my.cnf and move the data dir to nfs mount
 # start mysql
 # create the schema
-apc app connect mysql << EOF
+apc app connect $2 << EOF
 apt-get update
 apt-get install mysql-server -y
 cd /etc/mysql
@@ -74,10 +80,10 @@ cp -f /var/lib/jenkins/jobs/motorcloud_apc/workspace/Motorcloud.war /var/lib/jen
 cd /var/lib/jenkins/jobs/motorcloud_app/workspace/motorcloud
 
 # create the application
-apc app delete motoapp --batch || echo "app doesnt exist...skipping"
-apc app create motoapp -ae --allow-ssh  --start-cmd '/app/bash_start.sh'  --env-set 'DB_HOST=mysql.apcera.local' --env-set 'DB_PASSWORD=P@ssw0rd' --batch
+apc app delete $0 --batch || echo "app doesnt exist...skipping"
+apc app create $0 -ae --allow-ssh  --start-cmd '/app/bash_start.sh'  --env-set 'DB_HOST=$2.apcera.local' --env-set 'DB_PASSWORD=P@ssw0rd' --batch
 
 # join the same network as the mysql app
 # start the application
-apc network join network::/sandbox/gary.coburn::moto-net --job motoapp --discovery-address motoapp --batch
-apc app start motoapp
+apc network join network::/sandbox/gary.coburn::$1 --job $0 --discovery-address $0 --batch
+apc app start $0
