@@ -28,7 +28,7 @@ apc docker run $3 --restart always --image mysql --tag 5.7.11 --port 3306 --prov
 # open egress
 # open ssh and
 apc app stop $3
-apc network join network::/sandbox/gary.coburn::$1 --job $2 --discovery-address $2 --batch
+apc network join network::/sandbox/gary.coburn::$2 --job $3 --discovery-address $3 --batch
 apc app update $3 -ae --batch
 apc app update $3 --allow-ssh --batch
 apc app start $3
@@ -85,5 +85,5 @@ apc app create $1 -ae --allow-ssh  --start-cmd '/app/bash_start.sh'  --env-set '
 
 # join the same network as the mysql app
 # start the application
-apc network join network::/sandbox/gary.coburn::$1 --job $1 --discovery-address $1 --batch
+apc network join network::/sandbox/gary.coburn::$2 --job $1 --discovery-address $1 --batch
 apc app start $1
