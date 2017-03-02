@@ -81,7 +81,7 @@ cd /var/lib/jenkins/jobs/motorcloud_apc/workspace/motorcloud
 
 # create the application
 apc app delete $1 --batch || echo "app doesnt exist...skipping"
-apc app create $1 -ae --allow-ssh  --start-cmd '/app/bash_start.sh'  --env-set 'DB_HOST=$3.apcera.local' --env-set 'DB_PASSWORD=P@ssw0rd' --batch
+apc app create $1 -ae --allow-ssh  --start-cmd '/app/bash_start.sh'  --env-set 'DB_HOST='$3'.apcera.local' --env-set 'DB_PASSWORD=P@ssw0rd' --batch
 
 # join the same network as the mysql app
 # start the application
