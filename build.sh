@@ -47,11 +47,6 @@ apc app start $3
 # start mysql
 # create the schema
 apc app connect $3 << EOF
-#apt-get update
-#apt-get install mysql-server -y
-cd /etc/mysql
-sed -i "/bind-address/c bind-address = 0.0.0.0" my.cnf
-service mysql start
 mysql -u root -pP@ssw0rd -h localhost << EOF2
 CREATE DATABASE IF NOT EXISTS motorcloud;
 USE motorcloud;
@@ -69,7 +64,7 @@ CREATE TABLE Players (
   PRIMARY KEY (player_id)
 ) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
 LOCK TABLES Players WRITE;
-INSERT INTO Players VALUES (63,'Gary','Coburn','gcoburn@vmware.com','@garycoburn','Reggie Seno','Me Bang Drum','I put the boom boom in the room room.','Y'),(64,'Jay','Marshall','jj@jjhollywood.com','@jjhollywood','JJ Hollywood','Sweatin\' the Rock... Bleedin\' the Roll','I put the \"aas\" in PaaS.','N');
+INSERT INTO Players VALUES (63,'Gary','Coburn','gcoburn@vmware.com','@garycoburn','Reggie Seno','Me Bang Drum','I put the boom boom in the room room.','Y'),(64,'Jay','Marshall','jj@jjhollywood.com','@jjhollywood','JJ Hollywood','Sweatin\' the Rock... Bleedin\' the Roll','I put the \"sas\" in PaaS.','N');
 UNLOCK TABLES;
 GRANT ALL ON *.* to root@'%' IDENTIFIED BY 'P@ssw0rd';
 FLUSH PRIVILEGES;
@@ -82,6 +77,7 @@ EOF
 #
 # change to motorcloud war file directory
 # USED ONLY FOR BUILDING WITH JENKINS CHANGE TO LOCAL DIRECTORIES IF RUNNING LOCAL
+# cp -f /var/lib/jenkins/jobs/motorcloud_apc/workspace/Motorcloud.war /var/lib/jenkins/jobs/motorcloud_apc/workspace/motorcloud/Motorcloud.war
 cp -f /var/lib/jenkins/jobs/motorcloud_apc/workspace/Motorcloud.war /var/lib/jenkins/jobs/motorcloud_apc/workspace/motorcloud/Motorcloud.war
 cd /var/lib/jenkins/jobs/motorcloud_apc/workspace/motorcloud
 
