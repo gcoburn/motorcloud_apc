@@ -27,7 +27,8 @@ apc network create /sandbox/gary.coburn::$2 --batch
 #
 # delete mysql app if it exists then pull from docker image
 apc app delete $3 --batch || echo "doesnt exist"
-apc docker run $3 --restart always --image mysql --tag 5.7.11 --port 3306 --provider /dev::apcfs -m 1gb --env-set MYSQL_ROOT_PASSWORD=P@ssw0rd --batch
+apc docker run $3 --restart always --image mysql --tag 5.7.11 --port 3306 --provider /dev::external-nfs-provider-unshared-dev
+ -m 1gb --env-set MYSQL_ROOT_PASSWORD=P@ssw0rd --batch
 
 # stop the mysql app
 # join the newly created network
