@@ -47,8 +47,8 @@ apc app start $3
 # start mysql
 # create the schema
 apc app connect $3 << EOF
-apt-get update
-apt-get install mysql-server -y
+#apt-get update
+#apt-get install mysql-server -y
 cd /etc/mysql
 sed -i "/bind-address/c bind-address = 0.0.0.0" my.cnf
 service mysql start
